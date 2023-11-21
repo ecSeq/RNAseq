@@ -1,0 +1,18 @@
+# params.yaml
+# This file contains custom parameter settings, which can be adjusted
+# and provided to the pipeline with the -params-file option
+
+# BASIC PARAMS
+debug: false
+
+# INPUT / OUTPUT
+input: "$PWD"
+reference: false
+features: false
+samples: false
+output: "$PWD"
+
+# MODIFIERS
+control: false
+SE: false
+bamQC: false

@@ -1,7 +1,6 @@
 #!/usr/bin/env nextflow
 // This file defines individual processes (separated for portability)
 
-
 // index the genome
 process "STAR_index" {
 
@@ -21,11 +20,10 @@ process "STAR_index" {
     mkdir genome genome/STAR
     STAR --runMode genomeGenerate \\
     --genomeDir genome/STAR/ \\
-    --outFileNamePrefix genome/STAR/${fasta.baseName}. \\
+    --outFileNamePrefix genome/STAR/${fasta.baseName}. \\
     --genomeFastaFiles ${fasta} --runThreadN ${task.cpus}
     """
 }
-
 
 
 // align the reads to the genome
@@ -113,7 +111,6 @@ process "featureCounts" {
     cut -f 1,7- featureCounts/table.featureCounts | 
     sed 's/.Aligned.sortedByCoord.out.bam//g' > featureCounts/counts.tsv
     """
-
 }
 
 
